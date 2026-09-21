@@ -13,13 +13,21 @@ import Image from "next/image";
 
 const HeroContent = () => {
   const [showIntro, setShowIntro] = useState(false);
+  const [contentReady, setContentReady] = useState(false);
 
   useEffect(() => {
     let introTimer: number;
+    let contentTimer: number;
 
     const startIntro = () => {
       setShowIntro(true);
-      // الـ Intro هيفضل ظاهر 2.5s كاملة
+
+      // الـ Content يبدأ يظهر لما الـ Intro يبدأ يفيد (بعد 1.8s)
+      contentTimer = window.setTimeout(() => {
+        setContentReady(true);
+      }, 1800);
+
+      // الـ Intro يختفي تماماً بعد 2.5s
       introTimer = window.setTimeout(() => {
         setShowIntro(false);
       }, 2500);
@@ -31,9 +39,8 @@ const HeroContent = () => {
 
     return () => {
       window.removeEventListener("portfolio-loading-complete", startIntro);
-      if (introTimer !== undefined) {
-        window.clearTimeout(introTimer);
-      }
+      if (introTimer !== undefined) window.clearTimeout(introTimer);
+      if (contentTimer !== undefined) window.clearTimeout(contentTimer);
     };
   }, []);
 
@@ -45,11 +52,11 @@ const HeroContent = () => {
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
           transition={{
-            duration: 0.9, // أطول شوية عشان الفيد ناعم
-            ease: [0.22, 1, 0.36, 1], // easeOutExpo
-            delay: 1.6, // يبدأ يفيد بعد ما كل حاجة تكمل
+            duration: 0.9,
+            ease: [0.22, 1, 0.36, 1],
+            delay: 1.6,
           }}
-          className="pointer-events-none absolute inset-0 z-50 flex items-center justify-center overflow-hidden bg-[#030014]"
+          className="pointer-events-none fixed inset-0 z-[999] flex items-center justify-center overflow-hidden bg-[#030014]"
         >
           {/* Radial Glow */}
           <motion.div
@@ -82,7 +89,6 @@ const HeroContent = () => {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="relative flex flex-col items-center gap-5"
           >
-            {/* "Hello, I'm" */}
             <motion.span
               initial={{ opacity: 0, letterSpacing: "1.2em" }}
               animate={{ opacity: 1, letterSpacing: "0.55em" }}
@@ -92,7 +98,6 @@ const HeroContent = () => {
               Hello, I&apos;m
             </motion.span>
 
-            {/* Name */}
             <motion.h2
               initial={{ scale: 0.75, opacity: 0, filter: "blur(14px)" }}
               animate={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
@@ -122,10 +127,12 @@ const HeroContent = () => {
       {/* ===== Main Hero Content ===== */}
       <motion.div
         initial="hidden"
-        animate="visible"
+        animate={contentReady ? "visible" : "hidden"}
         className="flex min-h-[720px] w-full flex-col items-center justify-center gap-10 px-6 pt-32 sm:px-10 sm:pt-40 lg:min-h-[820px] lg:flex-row lg:gap-4 lg:px-20"
       >
         <div className="m-auto flex h-full w-full flex-col justify-center gap-5 text-center lg:text-start">
+          
+          {/* Badge + Name */}
           <motion.div
             variants={slideInFromTop}
             className="flex flex-col items-center gap-3 lg:items-start"
@@ -139,6 +146,7 @@ const HeroContent = () => {
             </h1>
           </motion.div>
 
+          {/* Role */}
           <motion.div
             variants={slideInFromLeft(0.5)}
             className="flex max-w-[700px] flex-col gap-6 text-2xl font-semibold leading-tight text-white sm:text-3xl"
@@ -148,6 +156,7 @@ const HeroContent = () => {
             </span>
           </motion.div>
 
+          {/* Description */}
           <motion.p
             variants={slideInFromLeft(0.8)}
             className="my-5 max-w-[620px] text-base leading-relaxed text-gray-400 sm:text-lg"
@@ -157,6 +166,7 @@ const HeroContent = () => {
             AI automation.
           </motion.p>
 
+          {/* Location + Availability */}
           <motion.div
             variants={slideInFromLeft(0.9)}
             className="flex flex-wrap items-center justify-center gap-3 text-sm text-gray-400 lg:justify-start"
@@ -171,6 +181,7 @@ const HeroContent = () => {
             <span className="text-[#b49bff]">Available for opportunities</span>
           </motion.div>
 
+          {/* CTA Buttons */}
           <motion.div
             variants={slideInFromLeft(1.1)}
             className="mt-2 flex flex-wrap items-center justify-center gap-4 lg:justify-start"
@@ -206,6 +217,7 @@ const HeroContent = () => {
           </motion.div>
         </div>
 
+        {/* Right Image */}
         <motion.div
           variants={slideInFromRight(0.8)}
           className="flex h-full w-full max-w-[420px] items-center justify-center lg:max-w-none"
