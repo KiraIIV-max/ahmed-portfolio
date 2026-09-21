@@ -6,10 +6,10 @@ import { MapPinIcon } from "@heroicons/react/24/outline";
 
 // ===== Stats Data =====
 const stats = [
-  { value: "01", label: "Software", sub: "Engineer" },
-  { value: "06", label: "Featured", sub: "Projects" },
-  { value: "FULL-STACK", label: "Primary", sub: "Focus" },
-  { value: "CAIRO", label: "Based in", sub: "Egypt" },
+  { value: "06", label: "Deployed", sub: "Projects" },
+  { value: "01", label: "Software", sub: "Internship" },
+  { value: "MERN", label: "Primary", sub: "Stack" },
+  { value: "01", label: "Desktop", sub: "Application" },
 ];
 
 const About = () => {
@@ -64,29 +64,29 @@ const About = () => {
             className="space-y-6 text-gray-400 text-[15px] leading-relaxed pt-2"
           >
             <p>
-              I&apos;m <span className="text-white font-medium">Ahmed Mohamed</span>, a
-              software engineer focused on building useful digital products from
-              concept to deployment. I enjoy connecting user experience, system design,
-              and reliable engineering behind the scenes.
+              I&apos;m <span className="font-medium text-white">Ahmed Mohamed</span>, a
+              junior full-stack developer focused on building useful digital products
+              from concept to deployment. I enjoy connecting user experience, system
+              design, and reliable engineering behind the scenes.
             </p>
             <p>
-              My work spans <span className="text-white">frontend development</span>,{" "}
-              <span className="text-white">backend APIs</span>, database design,
-              Linux, networking, cloud fundamentals, and automation. I like
-              understanding how each layer of a system contributes to the overall product.
+              My work spans <span className="text-white">React interfaces</span>,{" "}
+              <span className="text-white">Node.js APIs</span>, MongoDB and SQL
+              database design, desktop applications, Linux, networking, and automation.
+              I like understanding how each layer contributes to the overall product.
             </p>
             <p>
               Currently expanding in <span className="text-[#00E5FF]">AWS</span>,{" "}
               <span className="text-[#00E5FF]">Docker</span>,{" "}
               <span className="text-[#00E5FF]">DevOps</span>, and AI automation,
-              with a strong interest in building scalable, production-ready solutions.
+              with a focus on building maintainable solutions for real business workflows.
             </p>
 
             {/* Location */}
             <div className="flex items-center gap-2 text-sm text-gray-500 pt-2">
               <MapPinIcon className="w-4 h-4 text-[#00E5FF]" />
               <span>
-                Based in <span className="text-white">Cairo, Egypt</span> — Open to junior software engineering roles and product-focused opportunities.
+                Based in <span className="text-white">Cairo, Egypt</span> — Open to junior full-stack, backend, and desktop software opportunities.
               </span>
             </div>
           </motion.div>

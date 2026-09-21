@@ -56,7 +56,8 @@ const Encryption = () => {
           muted
           autoPlay
           playsInline
-          preload="false"
+          preload="none"
+          aria-hidden="true"
           className="w-full h-auto min-h-[420px] object-cover object-center opacity-70"
           src="/encryption.webm"
         />

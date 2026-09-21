@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/main/Navbar";
 import StarsCanvas from "@/components/main/StarsCanvas";
 import Footer from "@/components/main/Footer";
+import LoadingGate from "@/components/main/LoadingGate";
 import { Sora } from "next/font/google";
 
 
@@ -18,7 +19,25 @@ const sora = Sora({
 export const metadata: Metadata = {
   title: "Ahmed Mohamed | Full-Stack Software Engineer",
   description:
-    "Full-stack developer portfolio for Ahmed Mohamed, covering frontend, backend, cloud, DevOps, AI automation, and software engineering projects.",
+    "Portfolio of Ahmed Mohamed, a junior full-stack developer building MERN applications, backend systems, desktop tools, and practical business workflows.",
+  metadataBase: new URL("https://ahmed-portfolio-rosy-tau.vercel.app"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Ahmed Mohamed | Full-Stack Developer",
+    description:
+      "MERN applications, backend systems, desktop tools, and practical software projects.",
+    url: "/",
+    siteName: "Ahmed Mohamed Portfolio",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Ahmed Mohamed | Full-Stack Developer",
+    description:
+      "MERN applications, backend systems, desktop tools, and practical software projects.",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -28,10 +47,33 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${sora.variable} h-full antialiased`}
     >
       <body className={`${sora.variable} bg-[#030014] overflow-y-scroll overflow-x-hidden`}>
-        <StarsCanvas />
-        <Navbar />
-        {children}
-        <Footer/>
+        <LoadingGate>
+          <StarsCanvas />
+          <Navbar />
+          {children}
+          <Footer />
+        </LoadingGate>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Ahmed Mohamed",
+              jobTitle: "Junior Full-Stack Developer",
+              url: "https://ahmed-portfolio-rosy-tau.vercel.app",
+              sameAs: [
+                "https://github.com/KiraIIV-max",
+                "https://www.linkedin.com/in/ahmed-mohamed-1012a6353",
+              ],
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Cairo",
+                addressCountry: "Egypt",
+              },
+            }),
+          }}
+        />
       </body>
     </html>
   );

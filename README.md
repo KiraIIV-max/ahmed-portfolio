@@ -111,7 +111,7 @@ components/
   sub/                   Hero and supporting presentation components
 
 constants/
-  index.ts               Social links and shared portfolio data
+  socials.ts             Social links used by the navigation
 
 public/
   Project images, videos, icons, logos, and CV
@@ -124,7 +124,7 @@ The visual experience uses local assets from the `public/` directory, including:
 - `blackhole.webm` for the hero background
 - `cards-video.webm` for the skills section
 - `encryption.webm` for the security section
-- Project preview images
+- Optimized WebP project preview images
 - Logo and social icons
 - Ahmed Mohamed CV PDF
 

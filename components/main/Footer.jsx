@@ -59,13 +59,20 @@ const Footer = () => {
 
             {/* Subtitle */}
             <p className="text-[#00E5FF] text-sm md:text-base font-mono tracking-wider uppercase mt-4">
-              Junior Software Engineer
+              Full-Stack Developer · Desktop Apps
             </p>
 
             {/* Tagline */}
             <p className="text-gray-500 text-sm md:text-[15px] leading-relaxed mt-3 max-w-[500px]">
-              Full-Stack · Backend · Networking · Cloud · AI Automation
+              MERN · Desktop Apps · Backend · Cloud · Automation
             </p>
+            <a
+              href="/Ahmed_Mohamed_CV (4).pdf"
+              download="Ahmed-Mohamed-CV.pdf"
+              className="mt-6 w-fit text-sm font-medium text-gray-300 underline decoration-[#00E5FF]/60 underline-offset-4 transition-colors hover:text-[#00E5FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#00E5FF]"
+            >
+              Download CV
+            </a>
           </motion.div>
 
           {/* === Middle: Navigation (col-span-3) === */}

@@ -11,71 +11,77 @@ const projects = [
     id: "01",
     title: "ARTSCAPE",
     subtitle: "Full-Stack Art Auction Marketplace",
-    description: "A full-stack online art auction platform connecting artists, collectors, and administrators.",
+    description: "Built a marketplace flow for artists, collectors, and administrators with Laravel APIs, authenticated actions, auction data, and relational persistence.",
     tech: ["React", "Laravel", "PHP", "MySQL", "REST API", "Sanctum", "Tailwind"],
     links: [
       { text: "View Repository", url: "https://github.com/KiraIIV-max/ArtScape" }
     ],
-    image: "/project-1.png",
+    image: "/project-1.webp",
+    previewUrl: "github.com/KiraIIV-max/ArtScape",
   },
   {
     id: "02",
     title: "EVENTRA",
     subtitle: "Event Discovery & Booking Platform",
-    description: "A modern event booking experience built around discovery, search, ticket selection, and validation.",
+    description: "Built a responsive booking flow with discovery, search, ticket selection, validation states, and client-side persistence across the user journey.",
     tech: ["React 19", "Vite", "React Router", "JavaScript", "Tailwind", "LocalStorage"],
     links: [
       { text: "Live Project", url: "https://eventra-xi-five.vercel.app/" },
       { text: "View Repository", url: "https://github.com/KiraIIV-max/Eventra" }
     ],
-    image: "/project-2.png",
+    image: "/project-2.webp",
+    previewUrl: "eventra-xi-five.vercel.app",
   },
   {
     id: "03",
     title: "DRIVEON",
     subtitle: "Premium Car Rental Experience",
-    description: "A polished car rental interface focused on vehicle discovery, filtering, and booking flows.",
+    description: "Built a car rental discovery experience with filtering, route-based navigation, booking flows, and reusable responsive UI patterns.",
     tech: ["React 19", "Tailwind", "React Router", "GSAP", "LocalStorage"],
     links: [
       { text: "Live Project", url: "https://driveon-delta.vercel.app/" },
       { text: "View Repository", url: "https://github.com/KiraIIV-max/driveon" }
     ],
-    image: "/project-3.png",
+    image: "/project-3.webp",
+    previewUrl: "driveon-delta.vercel.app",
   },
   {
     id: "04",
     title: "MACBOOK PRO",
     subtitle: "Interactive 3D Product Showcase",
-    description: "An immersive product experience featuring a real-time 3D MacBook model and scroll animations.",
+    description: "Built an interactive 3D product showcase using React Three Fiber, scroll-driven motion, and a responsive product presentation.",
     tech: ["React", "Three.js", "React Three Fiber", "GSAP", "Zustand", "Tailwind"],
     links: [
       { text: "Live Project", url: "https://mac-book-pro-phi.vercel.app/" },
       { text: "View Repository", url: "https://github.com/KiraIIV-max/MacBook-Pro" }
     ],
-    image: "/project-4.png",
+    image: "/project-4.webp",
+    previewUrl: "mac-book-pro-phi.vercel.app",
   },
   {
     id: "05",
     title: "CPU SCHEDULING SIMULATOR",
     subtitle: "Operating Systems & Algorithms",
-    description: "A JavaFX desktop application for visualizing CPU scheduling algorithms with Gantt charts.",
+    description: "Built a JavaFX desktop simulator that visualizes CPU scheduling algorithms, calculates scheduling metrics, and renders Gantt charts for learning and analysis.",
     tech: ["Java", "JavaFX", "OOP", "Algorithms", "Operating Systems"],
     links: [
       { text: "View Repository", url: "https://github.com/KiraIIV-max/CPU-SCHEDULING-SIMULATOR" }
     ],
-    image: "/project-5.png",
+    image: "/project-5.webp",
+    previewUrl: "JavaFX desktop application",
   },
   {
     id: "06",
     title: "NOIRÉ",
     subtitle: "Premium Café Experience",
-    description: "A modern café website designed around elegant visual presentation and menu discovery.",
+    description: "Built a responsive café experience focused on menu discovery, visual presentation, smooth transitions, and reusable React sections.",
     tech: ["React", "Vite", "React Router", "GSAP", "CSS", "Lucide"],
     links: [
       { text: "Live Project", url: "https://noire-two-sigma.vercel.app/" },
       { text: "View Repository", url: "https://github.com/KiraIIV-max/Noire" }
     ],
-    image: "/project-6.png",
+    image: "/project-6.webp",
+    previewUrl: "noire-two-sigma.vercel.app",
   },
 ];
 
@@ -198,6 +204,7 @@ const Projects = () => {
                 projectRefs.current[index] = el;
               }}
               onMouseEnter={() => setActiveIndex(index)}
+              onFocus={() => setActiveIndex(index)}
               className="py-16 border-b border-[#7042f83b] last:border-b-0"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -220,7 +227,7 @@ const Projects = () => {
                       <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
                       <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
                       <div className="ml-4 text-[10px] font-mono text-gray-500 truncate">
-                        {project.title.toLowerCase().replace(/\s+/g, "-")}.vercel.app
+                        {project.previewUrl}
                       </div>
                     </div>
 
@@ -230,6 +237,7 @@ const Projects = () => {
                         src={project.image}
                         alt={project.title}
                         fill
+                        sizes="(max-width: 1024px) 100vw, 42vw"
                         className="object-cover object-top"
                       />
                     </div>

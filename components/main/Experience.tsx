@@ -9,12 +9,12 @@ const experiences = [
     id: "01",
     title: "Frontend & Full-Stack Development Intern",
     company: "Sqrock IT Solutions",
-    date: "2026",
+    date: "2026 · Internship",
     location: "Cairo, Egypt",
     badge: "Internship",
     featured: true,
     description:
-      "Worked on responsive interfaces and interactive product experiences, translating design and user flows into real web applications.",
+      "Built responsive interfaces and interactive product experiences for real web applications, translating designs and user flows into reusable React components.",
     sections: [
       { label: "Selected Work", content: "DRIVEON · NOIRÉ · EVENTRA" },
       {
@@ -27,7 +27,7 @@ const experiences = [
     id: "02",
     title: "AWS Cloud Practitioner",
     company: "NetPoints",
-    date: "2026",
+    date: "2026 · Training",
     badge: "Training",
     description:
       "Cloud-focused training covering AWS fundamentals and modern cloud infrastructure.",
@@ -42,7 +42,7 @@ const experiences = [
     id: "03",
     title: "AI Automation & n8n",
     company: "DEPI",
-    date: "2026",
+    date: "2026 · Training",
     badge: "Training",
     description:
       "Technical training focused on workflow automation, AI-powered systems, and API-based integrations.",
@@ -57,7 +57,7 @@ const experiences = [
     id: "04",
     title: "CCNA Training",
     company: "Cisco Networking Training",
-    date: "2026",
+    date: "2026 · Training",
     badge: "Certification",
     description:
       "Hands-on networking training covering network fundamentals, routing, and switching.",
@@ -72,7 +72,7 @@ const experiences = [
     id: "05",
     title: "Machine Learning Training",
     company: "IEEE",
-    date: "36 Hours",
+    date: "36 hours · Training",
     badge: "Training",
     description:
       "Technical training introducing machine learning concepts and practical approaches to building ML systems.",
@@ -87,7 +87,7 @@ const experiences = [
     id: "06",
     title: "Communication & Leadership",
     company: "NTI — National Telecommunication Institute",
-    date: "2026",
+    date: "2026 · Training",
     badge: "Professional Development",
     description:
       "Professional development training focused on communication, teamwork, leadership, and workplace collaboration.",
@@ -226,7 +226,7 @@ const Experience = () => {
           <div className="flex items-center gap-3 mb-6">
             <div className="h-[1px] w-8 bg-[#00E5FF]" />
             <span className="text-[#00E5FF] text-xs font-mono tracking-[0.3em] uppercase">
-              05 — Training & Experience
+              05 — Experience & Training
             </span>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
@@ -238,7 +238,7 @@ const Experience = () => {
               </span>
             </h2>
             <p className="text-gray-400 text-[15px] leading-relaxed lg:pb-3">
-              A collection of internships, technical programs, and industry-focused training experiences across software engineering, cloud, networking, automation, and professional development.
+              Practical experience and focused training across software engineering, cloud, networking, automation, and professional development.
             </p>
           </div>
         </div>

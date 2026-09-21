@@ -83,7 +83,7 @@ const SkillCategories = [
       { name: "Nginx", icon: <SiNginx /> },
       { name: "AWS", icon: <FaAws /> },
       { name: "Reverse Proxy", icon: <TbApi /> },
-      { name: "CI/CD", icon: <FaServer /> },
+      { name: "GitHub Actions", icon: <SiGithub /> },
     ],
   },
   {
@@ -181,11 +181,12 @@ const Skills = () => {
         <div className="w-full h-full opacity-20 absolute flex items-center justify-center bg-cover">
           <video
             className="w-full h-auto"
-            preload="false"
+            preload="none"
             playsInline
             loop
             muted
             autoPlay
+            aria-hidden="true"
             src="/cards-video.webm"
           />
         </div>

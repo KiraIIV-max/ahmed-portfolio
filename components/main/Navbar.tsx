@@ -1,6 +1,6 @@
 "use client";
 
-import { Socials } from "@/constants";
+import { Socials } from "@/constants/socials";
 import Image from "next/image";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="flex-1 flex justify-start">
           <a
             href="#about-me"
-            className="h-auto w-auto flex flex-row items-center"
+            className="h-auto w-auto flex flex-row items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#00E5FF]"
           >
             <Image src="/logo2.svg" alt="Ahmed Mohamed logo" width={56} height={56} className="cursor-pointer hover:animate-slowspin" />
             <span className="font-semibold ml-2 hidden sm:block text-white tracking-[0.2em] uppercase text-sm">
@@ -36,7 +36,7 @@ const Navbar = () => {
         <nav className="hidden lg:flex flex-1 justify-center">
           <div className="flex items-center justify-between w-full max-w-[560px] border border-[#7042f861] bg-[#0300145e] px-5 py-2.5 rounded-full text-sm text-gray-200">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className="cursor-pointer hover:text-white transition-colors">
+              <a key={link.href} href={link.href} className="cursor-pointer transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#00E5FF]">
                 {link.name}
               </a>
             ))}
@@ -47,7 +47,7 @@ const Navbar = () => {
           <a
             href="/Ahmed_Mohamed_CV (4).pdf"
             download="Ahmed-Mohamed-CV.pdf"
-            className="hidden sm:inline-flex px-4 lg:px-5 py-2 rounded-full border border-[#7042f861] bg-[#0300145e] text-gray-200 hover:bg-[#7042f861] hover:text-white transition-all duration-300 cursor-pointer text-sm font-medium"
+            className="hidden cursor-pointer rounded-full border border-[#7042f861] bg-[#0300145e] px-4 py-2 text-sm font-medium text-gray-200 transition-all duration-300 hover:bg-[#7042f861] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#00E5FF] sm:inline-flex lg:px-5"
           >
             Download CV
           </a>
@@ -76,7 +76,7 @@ const Navbar = () => {
             aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={isOpen}
             onClick={() => setIsOpen((open) => !open)}
-            className="lg:hidden inline-flex items-center justify-center rounded-full border border-[#7042f861] bg-[#0300145e] p-2 text-gray-200 hover:text-white"
+            className="inline-flex items-center justify-center rounded-full border border-[#7042f861] bg-[#0300145e] p-2 text-gray-200 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#00E5FF] lg:hidden"
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -91,7 +91,7 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="rounded-xl px-4 py-3 text-sm hover:bg-[#7042f861] hover:text-white"
+                className="rounded-xl px-4 py-3 text-sm hover:bg-[#7042f861] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#00E5FF]"
               >
                 {link.name}
               </a>
@@ -99,7 +99,7 @@ const Navbar = () => {
             <a
               href="/Ahmed_Mohamed_CV (4).pdf"
               download="Ahmed-Mohamed-CV.pdf"
-              className="mt-2 rounded-xl border border-[#7042f861] px-4 py-3 text-center text-sm font-medium text-gray-200 hover:bg-[#7042f861] hover:text-white"
+              className="mt-2 rounded-xl border border-[#7042f861] px-4 py-3 text-center text-sm font-medium text-gray-200 hover:bg-[#7042f861] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#00E5FF]"
             >
               Download CV
             </a>

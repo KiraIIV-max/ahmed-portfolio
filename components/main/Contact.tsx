@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Mail, MapPin } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-// ===== رابط Gmail الجاهز =====
 const gmailLink =
   "https://mail.google.com/mail/?view=cm&fs=1&to=ahmedmoh01500@gmail.com&su=Project%20Inquiry&body=Hi%20Ahmed%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project%20with%20you.%0A%0AThanks!";
 
@@ -38,11 +37,6 @@ const contactInfo = [
 ];
 
 const Contact = () => {
-  const openGmail = (e: React.MouseEvent) => {
-    e.preventDefault();
-    window.open(gmailLink, "_blank", "noopener,noreferrer");
-  };
-
   return (
     <section
       id="contact"
@@ -89,13 +83,13 @@ const Contact = () => {
             </p>
 
             {/* ===== CTA Button — Gradient on Hover ===== */}
-            <motion.button
-              onClick={openGmail}
+            <motion.a
+              href={`mailto:ahmedmoh01500@gmail.com?subject=Project%20Inquiry`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="group relative inline-flex items-center gap-3 mt-12 px-8 py-4 rounded-full border border-white/20 text-white font-medium text-sm md:text-base tracking-wider uppercase transition-all duration-500 cursor-pointer overflow-hidden hover:border-transparent hover:shadow-[0_0_30px_rgba(139,92,246,0.5)]"
+              className="group relative mt-12 inline-flex items-center gap-3 overflow-hidden rounded-full border border-white/20 px-8 py-4 text-sm font-medium uppercase tracking-wider text-white transition-all duration-500 hover:border-transparent hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#00E5FF] md:text-base"
             >
               {/* Gradient Background Layer (بيظهر عند الـ Hover) */}
               <span className="absolute inset-0 bg-gradient-to-r from-purple-500 via-violet-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -106,7 +100,7 @@ const Contact = () => {
               {/* Content (فوق الـ Gradient) */}
               <span className="relative z-10">Get in Touch</span>
               <ArrowUpRight className="relative z-10 w-5 h-5 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </motion.button>
+            </motion.a>
           </div>
 
           {/* ===== Divider ===== */}
