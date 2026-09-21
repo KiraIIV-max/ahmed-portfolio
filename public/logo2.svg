@@ -1,0 +1,42 @@
+<svg width="220" height="100" viewBox="0 0 220 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradientAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#00E5FF" />
+    </linearGradient>
+  </defs>
+
+  <!-- القوس الأيسر < -->
+  <path d="M 42 22 L 14 50 L 42 78" 
+        stroke="url(#gradientAccent)" 
+        stroke-width="8" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"/>
+
+  <!-- الشرطة المايلة / -->
+  <line x1="54" y1="78" x2="72" y2="22" 
+        stroke="url(#gradientAccent)" 
+        stroke-width="8" 
+        stroke-linecap="round"/>
+
+  <!-- حرف A (أبيض) -->
+  <path d="M 100 18 L 70 82 L 83 82 L 100 44 L 117 82 L 130 82 L 100 18 Z" 
+        fill="#FFFFFF"/>
+
+  <!-- حرف M (Gradient) -->
+  <path d="M 117 82 L 117 38 L 138 62 L 159 38 L 159 82" 
+        stroke="url(#gradientAccent)" 
+        stroke-width="8" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"/>
+
+  <!-- القوس الأيمن > -->
+  <path d="M 180 22 L 208 50 L 180 78" 
+        stroke="url(#gradientAccent)" 
+        stroke-width="8" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"/>
+</svg>
